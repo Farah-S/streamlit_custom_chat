@@ -7,6 +7,8 @@ _component_func = components.declare_component(
     url="http://localhost:3000",  # Fetch frontend component from local webserver
 )
 
+
+
 _component_func = components.declare_component(
     "ChatContainer",
     url="http://localhost:3000",  # Fetch frontend component from local webserver
@@ -17,6 +19,7 @@ _component_func = components.declare_component(
 def Gridy(role: str="assistant", content: str="", key=None) -> int:
     component_value = _component_func(role=role, content=content, key=key)
     return component_value
+
 def CustomChatBubble(role: str="assistant", content: str="", key=None) -> int:
     component_value = _component_func(role=role, content=content, key=key)
     return component_value
@@ -24,3 +27,16 @@ def CustomChatBubble(role: str="assistant", content: str="", key=None) -> int:
 def ChatContainer(messages=[], key=None) -> int:
     component_value = _component_func(messages=messages, key=key)
     return component_value
+
+# def updateMessages(newmessages=[]):
+#     ChatContainer(messages=newmessages)
+    
+_component_func = components.declare_component(
+    "ChatInput",
+    url="http://localhost:3000",  # Fetch frontend component from local webserver
+)
+
+def ChatInput(initialValue="") -> str:
+    component_value = _component_func(initialValue=initialValue)
+    c=(component_value)
+    return c

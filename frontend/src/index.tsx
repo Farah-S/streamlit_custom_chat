@@ -39,6 +39,7 @@ const engine = new Styletron();
 // );
 
 ReactDOM.render(
+  
   <React.StrictMode>
     <StyletronProvider value={engine}>
       <ThemeProvider theme={LightTheme}>
@@ -57,6 +58,7 @@ ReactDOM.render(
         </Paper> */}
         {/* <ChatContainer2> */}
           <ChatContainer/>
+    
           {/* <input/> */}
         {/* </ChatContainer2> */}
       </ThemeProvider>
