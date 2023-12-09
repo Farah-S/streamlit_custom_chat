@@ -52,11 +52,11 @@ const ChatContainer=(props: ComponentProps)=>{
   
   return (
     <Row>
-      <Col xs={1} style={{width:"10%"}}>
+      {/* <Col xs={1} style={{width:"10%"}}>
         <button style={{width:"80%"}}/>
         <button style={{width:"80%"}}/>
-      </Col>
-      <Col  xs={11} style={{width:"90%"}}>
+      </Col> */}
+      <Col  style={{width:"100%"}}>
         <Paper
             sx={paperStyle}
           >
