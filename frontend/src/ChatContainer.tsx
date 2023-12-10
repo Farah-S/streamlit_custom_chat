@@ -25,12 +25,12 @@ const ChatContainer=(props: ComponentProps)=>{
                 webkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)'
               },
               '&::-webkit-scrollbar-thumb': {
-                backgroundColor:"#fdfaff",
+                backgroundColor:"transparent",
                 // backgroundColor: 'rgba(0,0,0,0)',
-                outline: '1px solid rgba(0,0,0,0.2)',
+                outline: '1px solid rgba(0,0,0,0.25)',
                 borderRadius: 8,
               },
-              borderColor:"#f4efff",
+              borderColor:"transparent",
               borderStyle: "solid",
               overflowY:"scroll",
               p: 2,
@@ -41,7 +41,7 @@ const ChatContainer=(props: ComponentProps)=>{
               marginRight:"5%",
               boxShadow:"inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)",
               // flexGrow: 20,
-              backgroundColor: '#fdfaff',
+              backgroundColor: '#fafaff',
               // width:"85%"
             }
 
