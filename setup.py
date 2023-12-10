@@ -9,7 +9,7 @@ setuptools.setup(
     name="streamlit-custom-chat",
     version="0.0.1",
     author="Farah S",
-    author_email="-",
+    author_email="",
     description="Streamlit component for a custom chat",
     long_description=long_description,
     long_description_content_type="text/markdown",
