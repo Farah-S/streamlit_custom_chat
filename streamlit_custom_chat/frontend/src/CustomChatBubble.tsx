@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 function ChatBubble({data:{role="",content=""}}, key:string){
 
   const BubbleStyle = {
-      color: "#7377cb",
+      color: "#534eb1",
       backgroundColor: role==="user"?"#f2f6ff":"#f6f5ff", // 
       // padding: "12px",
       paddingTop:"7px",
