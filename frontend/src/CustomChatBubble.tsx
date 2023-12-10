@@ -10,7 +10,7 @@ function ChatBubble({data:{role="",content=""}}, key:string){
 
   const BubbleStyle = {
       color: "#7377cb",
-      backgroundColor: role==="user"?"#eef7ff":"#f8f2ff",
+      backgroundColor: role==="user"?"#f3f6ff":"#f9f4ff",
       // padding: "12px",
       paddingTop:"7px",
       paddingRight:"10px",
