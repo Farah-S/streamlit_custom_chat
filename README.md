@@ -5,7 +5,7 @@ Streamlit component that displays a custom made chat layout
 ## Installation instructions
 
 ```sh
-pip install streamlit-custom-chat
+pip install streamlit_custom_chat
 ```
 
 ## Usage instructions
@@ -13,7 +13,7 @@ pip install streamlit-custom-chat
 ```python
 import streamlit as st
 
-from streamlit-custom-chat import ChatContainer
+from streamlit_custom_chat import ChatContainer
 
 value = ChatContainer()
 

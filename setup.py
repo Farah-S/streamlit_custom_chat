@@ -6,8 +6,8 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="streamlit-custom-chat",
-    version="0.0.1",
+    name="streamlit_custom_chat",
+    version="0.0.7",
     author="Farah S",
     author_email="",
     description="Streamlit component for a custom chat",
