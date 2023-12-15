@@ -1,6 +1,6 @@
 # streamlit_custom_chat
 
-Streamlit component that allows you to do X
+Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where the array is configured as ["role":"", "content":"", "key":""]
 
 ## Installation instructions
 
