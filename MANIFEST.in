@@ -1,2 +1,2 @@
-recursive-include streamlit_custom_chat/frontend/build *
-recursive-include streamlit_custom_chat/frontend/dist *
+include streamlit_custom_chat/frontend/build/*
+include streamlit_custom_chat/frontend/build/static/js/*
