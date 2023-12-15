@@ -48,7 +48,7 @@ function ChatBubble({data:{role="",content=""}}, key:string){
       <Container key={key} fluid style={assistantContainerStyle}>
         <Row style={{backgroundColor:"transparent"}}>
           <Col xs={1} style={{backgroundColor:"transparent",width:"6%", paddingLeft:"5px", marginLeft: "30px",paddingTop: "2px"}}>
-              <img alt="icon" src={require('./assets/images/robot_icon.png')} height={35} />
+              <img alt="icon" src={require('assets/images/robot_icon.png')} height={35} />
           </Col>
           <Col xs={10} style={BubbleStyle}>
             <Typography style={{whiteSpace:"pre-line",fontFamily: "itim", fontWeight: "525", wordWrap: "break-word",  padding: "5px"}}>
@@ -72,7 +72,7 @@ function ChatBubble({data:{role="",content=""}}, key:string){
           </Typography>
         </Col>
         <Col xs={1}>
-            <img alt="icon" src={require('./assets/images/person_icon.png')} height={43} />
+            <img alt="icon" src={require('assets/images/person_icon.png')} height={43} />
         </Col>
       </Row>
     </Container>
