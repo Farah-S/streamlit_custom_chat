@@ -5,7 +5,7 @@ Streamlit custom chat messages and container for the chat messages, takes an arr
 ## Installation instructions
 
 ```sh
-pip install streamlit_custom_chat
+python -m pip install --index-url https://test.pypi.org/simple/ --no-deps streamlit_custom_chat
 ```
 
 ## Usage instructions
