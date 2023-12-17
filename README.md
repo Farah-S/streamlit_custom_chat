@@ -1,6 +1,14 @@
 # streamlit_custom_chat
 
-Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role and the array is configured as [{"role":"user", "content":"", "key":""}, {"role":"assistant", "content":"", "key":""}]
+Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role. The parameters are as follow:
+
+messages, key, overflowY, scrollBackgroundColor,
+  containerBorderColor,containerBorderRadius, containerHeight,
+  containerBoxShadow,
+  containerBackgroundColor, textColor, userBackgroundColor, 
+  agentBubbleBackgroundColor, bubblePaddingRight, bubblePaddingLeft, 
+  bubblePaddingBottom, bubblePaddingTop,
+  fontWeight, bubbleBorderRadius, fontFamily
 
 ## Installation instructions
 

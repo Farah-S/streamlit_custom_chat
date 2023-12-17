@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 # the component, and True when we're ready to package and distribute it.
 # (This is, of course, optional - there are innumerable ways to manage your
 # release process.)
-_RELEASE = True
+_RELEASE = False
 
 # Declare a Streamlit component. `declare_component` returns a function
 # that is used to create instances of the component. We're naming this
@@ -44,23 +44,13 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def ChatContainer(messages=[], key=None):
-    """Create a new instance of "ChatContainer".
-
-    Parameters
-    ----------
-    name: str
-        The name of the thing we're saying hello to. The component will display
-        the text "Hello, {name}!"
-    key: str or None
-        An optional key that uniquely identifies this component. If this is
-        None, and the component's arguments are changed, the component will
-        be re-mounted in the Streamlit frontend and lose its current state.
-
-    Returns
-    -------
-    None
-    """
+def ChatContainer(messages=[], key=None, overflowY="auto", scrollBackgroundColor="transparent",
+    containerBorderColor="transparent",containerBorderRadius="2rem", containerHeight="550px",
+    containerBoxShadow="inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)",
+    containerBackgroundColor="#fafaff", textColor="#534eb1", userBackgroundColor="rgb(232, 243, 255)", 
+    agentBubbleBackgroundColor="#f0efff", bubblePaddingRight="10px", bubblePaddingLeft="10px", 
+    bubblePaddingBottom="7px", bubblePaddingTop="7px", fontWeight="525", bubbleBorderRadius="2rem", fontFamily="itim"):
+    
     # Call through to our private component function. Arguments we pass here
     # will be sent to the frontend, where they'll be available in an "args"
     # dictionary.
@@ -69,7 +59,12 @@ def ChatContainer(messages=[], key=None):
     # value of the component before the user has interacted with it.
     
     # chatBubbles=[]
-    component_value = _component_func(messages=messages, key=key)
+    component_value = _component_func(messages=messages, key=key, overflowY=overflowY, scrollBackgroundColor=scrollBackgroundColor, containerBorderColor=containerBorderColor,
+        containerBorderRadius=containerBorderRadius, containerHeight=containerHeight, containerBoxShadow=containerBoxShadow,
+        containerBackgroundColor=containerBackgroundColor, textColor=textColor, userBackgroundColor=userBackgroundColor,
+        agentBubbleBackgroundColor=agentBubbleBackgroundColor, bubblePaddingRight=bubblePaddingRight
+        ,bubblePaddingLeft=bubblePaddingLeft, bubblePaddingBottom=bubblePaddingBottom,bubblePaddingTop=bubblePaddingTop,
+        fontWeight=fontWeight, bubbleBorderRadius=bubbleBorderRadius, fontFamily=fontFamily)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
