@@ -4,7 +4,6 @@ README.md
 app.py
 setup.py
 streamlit_custom_chat/__init__.py
-streamlit_custom_chat/example.py
 streamlit_custom_chat.egg-info/PKG-INFO
 streamlit_custom_chat.egg-info/SOURCES.txt
 streamlit_custom_chat.egg-info/dependency_links.txt
@@ -17,6 +16,6 @@ streamlit_custom_chat/frontend/build/person_icon.png
 streamlit_custom_chat/frontend/build/robot_icon.png
 streamlit_custom_chat/frontend/build/static/css/main.241951ba.css
 streamlit_custom_chat/frontend/build/static/css/main.241951ba.css.map
-streamlit_custom_chat/frontend/build/static/js/main.bdefa394.js
-streamlit_custom_chat/frontend/build/static/js/main.bdefa394.js.LICENSE.txt
-streamlit_custom_chat/frontend/build/static/js/main.bdefa394.js.map
+streamlit_custom_chat/frontend/build/static/js/main.85e464fe.js
+streamlit_custom_chat/frontend/build/static/js/main.85e464fe.js.LICENSE.txt
+streamlit_custom_chat/frontend/build/static/js/main.85e464fe.js.map

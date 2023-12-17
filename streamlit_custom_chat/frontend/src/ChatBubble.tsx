@@ -19,11 +19,11 @@ class MessageBubble extends Component<State>{
     const { data, key } = this.props;
     
     const BubbleStyle = {
-      color: "rgb(63, 41, 122)",
+      color: "rgb(61, 48, 96)",
       backgroundColor: data.role==="user"?"rgb(228, 241, 255)":"rgb(234, 233, 255)", // 
       paddingTop:"7px",
-      paddingRight:"10px",
-      paddingLeft:"10px",
+      paddingRight:"15px",
+      paddingLeft:"15px",
       paddingBottom:"7px",
       "fontWeight":"100",
       maxWidth:"90%",
@@ -72,7 +72,7 @@ class MessageBubble extends Component<State>{
           <Col xs={1}>
           </Col>
           <Col xs={10} style={BubbleStyle}>
-            <Typography style={{textAlign:"right",whiteSpace:"pre-line",fontFamily: "itim", fontWeight: "525", wordWrap: "break-word",  padding: "5px",}}>
+            <Typography style={{textAlign:"right",whiteSpace:"pre-line",fontFamily: "itim", fontWeight: "500", wordWrap: "break-word",  padding: "5px",}}>
                   {data.content}
             </Typography>
           </Col>
