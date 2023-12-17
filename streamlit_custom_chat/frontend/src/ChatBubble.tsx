@@ -19,8 +19,8 @@ class MessageBubble extends Component<State>{
     const { data, key } = this.props;
     
     const BubbleStyle = {
-      color: "#534eb1",
-      backgroundColor: data.role==="user"?"rgb(232, 243, 255)":"#f0efff", // 
+      color: "rgb(63, 41, 122)",
+      backgroundColor: data.role==="user"?"rgb(228, 241, 255)":"rgb(234, 233, 255)", // 
       paddingTop:"7px",
       paddingRight:"10px",
       paddingLeft:"10px",
