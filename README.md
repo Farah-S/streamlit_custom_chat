@@ -1,5 +1,7 @@
 # streamlit_custom_chat
 
+![container_example](https://github.com/Farah-S/streamlit_custom_chat/blob/adding-customization/streamlit_custom_chat/frontend/public/container_example.png)
+
 Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role. The parameters are as follow:
 
 Args:
