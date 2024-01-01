@@ -38,14 +38,15 @@ with col1:
     st.button("Take a Quiz", use_container_width=True)
     
 with col2:
-    #component that displays the messages
-    ChatContainer(messages=st.session_state.messages, key="chatcontainer", agentBubbleBackgroundColor="#eeeeee")
+    #component that displays the messages with adjusted style, remove the styles to see the default style
+    ChatContainer(messages=st.session_state.messages, key="chatcontainer", containerStyle={"backgroundColor":"teal"}, bubbleStyle={"textColor":"blue"})
 
-    # if st.button(label="assistant", key="assistant"):
-    #     key = generate()
-    #     st.session_state.messages.append({"role": "assistant", "content": "whatever","key":"assistant-"+key.get_key()})
-    #     refresh('assistant')
+    if st.button(label="assistant", key="assistant"):
+        key = generate()
+        st.session_state.messages.append({"role": "assistant", "content": "whatever","key":"assistant-"+key.get_key()})
+        refresh('assistant')
         
+    
 
     if prompt:= ChatInput(initialValue="",key="inputButton"):
         key = generate()

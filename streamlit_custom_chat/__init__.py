@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 # the component, and True when we're ready to package and distribute it.
 # (This is, of course, optional - there are innumerable ways to manage your
 # release process.)
-_RELEASE = False
+_RELEASE = True
 
 # Declare a Streamlit component. `declare_component` returns a function
 # that is used to create instances of the component. We're naming this
@@ -44,13 +44,55 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def ChatContainer(messages=[], key=None, overflowY="auto", scrollBackgroundColor="transparent",
-    containerBorderColor="transparent",containerBorderRadius="2rem", containerHeight="550px",
-    containerBoxShadow="inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)",
-    containerBackgroundColor="#fafaff", textColor="#534eb1", userBackgroundColor="rgb(232, 243, 255)", 
-    agentBubbleBackgroundColor="#f0efff", bubblePaddingRight="10px", bubblePaddingLeft="10px", 
-    bubblePaddingBottom="7px", bubblePaddingTop="7px", fontWeight="525", bubbleBorderRadius="2rem", fontFamily="itim"):
-    
+def ChatContainer(messages=[], key=None, containerStyle={}, bubbleStyle={}):
+    """_summary_
+
+    Args:
+        messages (list, optional): 
+            Messages that will be displayed. Each message must be in the form of 
+            {"role":"","content":"","key":""} 
+            where the role can be "user" or "assistant", 
+            content is the message, 
+            key uniquely identifies each messages. 
+            Defaults to [].
+        
+        key (_type_, optional): 
+            uniquely identifies the container instance. Defaults to None.
+        
+        containerStyle (dict, optional): 
+            Allows the customization of the chat container style with CSS. 
+            The values that can be changed and their default values are {
+            
+            "overflowY": "auto", 
+            "scrollBackgroundColor": "transparent", 
+            "borderColor": "transparent",
+            "borderRadius": "2rem", 
+            "height": "550px", 
+            "boxShadow": "inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)", 
+            "backgroundColor": "#fafaff"
+            
+            }.
+            
+        bubbleStyle (dict, optional): 
+            Allows the customization of the chat bubble style with CSS. 
+            The values that can be changed and their default values are {
+                
+                textColor:"#534eb1", 
+                userBackgroundColor:"rgb(232, 243, 255)", 
+                agentBackgroundColor:"#f0efff", 
+                paddingRight:"10px", 
+                paddingLeft:"10px", 
+                paddingBottom:"7px", 
+                paddingTop:"7px",
+                fontWeight:"525", 
+                borderRadius:"2rem", 
+                fontFamily:"itim"
+                
+            }.
+
+    Returns:
+        None
+    """
     # Call through to our private component function. Arguments we pass here
     # will be sent to the frontend, where they'll be available in an "args"
     # dictionary.
@@ -58,13 +100,7 @@ def ChatContainer(messages=[], key=None, overflowY="auto", scrollBackgroundColor
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
     
-    # chatBubbles=[]
-    component_value = _component_func(messages=messages, key=key, overflowY=overflowY, scrollBackgroundColor=scrollBackgroundColor, containerBorderColor=containerBorderColor,
-        containerBorderRadius=containerBorderRadius, containerHeight=containerHeight, containerBoxShadow=containerBoxShadow,
-        containerBackgroundColor=containerBackgroundColor, textColor=textColor, userBackgroundColor=userBackgroundColor,
-        agentBubbleBackgroundColor=agentBubbleBackgroundColor, bubblePaddingRight=bubblePaddingRight
-        ,bubblePaddingLeft=bubblePaddingLeft, bubblePaddingBottom=bubblePaddingBottom,bubblePaddingTop=bubblePaddingTop,
-        fontWeight=fontWeight, bubbleBorderRadius=bubbleBorderRadius, fontFamily=fontFamily)
+    component_value = _component_func(messages=messages, key=key, containerStyle=containerStyle, bubbleStyle=bubbleStyle)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.

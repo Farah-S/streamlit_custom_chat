@@ -2,13 +2,51 @@
 
 Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role. The parameters are as follow:
 
-messages, key, overflowY, scrollBackgroundColor,
-  containerBorderColor,containerBorderRadius, containerHeight,
-  containerBoxShadow,
-  containerBackgroundColor, textColor, userBackgroundColor, 
-  agentBubbleBackgroundColor, bubblePaddingRight, bubblePaddingLeft, 
-  bubblePaddingBottom, bubblePaddingTop,
-  fontWeight, bubbleBorderRadius, fontFamily
+Args:
+  messages (list, optional): 
+    Messages that will be displayed. Each message must be in the form of 
+    {"role":"","content":"","key":""} 
+    where the role can be "user" or "assistant", 
+    content is the message, 
+    key uniquely identifies each messages. 
+    Defaults to [].
+  
+  key (_type_, optional): 
+    uniquely identifies the container instance. Defaults to None.
+  
+  containerStyle (dict, optional): 
+    Allows the customization of the chat container style with CSS. 
+    The values that can be changed and their default values are {
+      
+      "overflowY": "auto", 
+      "scrollBackgroundColor": "transparent", 
+      "borderColor": "transparent",
+      "borderRadius": "2rem", 
+      "height": "550px", 
+      "boxShadow": "inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)", 
+      "backgroundColor": "#fafaff"
+      
+      }.
+      
+  bubbleStyle (dict, optional): 
+    Allows the customization of the chat bubble style with CSS. 
+    The values that can be changed and their default values are {
+          
+      textColor:"#534eb1", 
+      userBackgroundColor:"rgb(232, 243, 255)", 
+      agentBackgroundColor:"#f0efff", 
+      paddingRight:"10px", 
+      paddingLeft:"10px", 
+      paddingBottom:"7px", 
+      paddingTop:"7px",
+      fontWeight:"525", 
+      borderRadius:"2rem", 
+      fontFamily:"itim"
+      
+    }.
+
+Returns:
+  None
 
 ## Installation instructions
 
@@ -17,11 +55,22 @@ python -m pip install --index-url https://test.pypi.org/simple/ --no-deps stream
 ```
 
 ## Usage instructions
+Example of how to use without customization
 
 ```python
 import streamlit as st
 
 from streamlit_custom_chat import ChatContainer
 
-value = ChatContainer(messages=[], key="")
+ChatContainer(messages=[], key="")
+```
+
+Example of how to use with customization
+
+```python
+import streamlit as st
+
+from streamlit_custom_chat import ChatContainer
+
+ChatContainer(messages=[], key="", containerStyle={"backgroundColor":"pink"}, bubbleStyle={"userBackgroundColor":"#f0eeef"})
 ```

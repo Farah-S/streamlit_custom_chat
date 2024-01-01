@@ -10,14 +10,17 @@ import MessageBubble from "./ChatBubble";
 interface State {
   messages: [],
   key: string,
-  overflowY:"auto", scrollBackgroundColor:"transparent",
-  containerBorderColor:"transparent",containerBorderRadius:"2rem", containerHeight:"550px",
-  containerBoxShadow:"inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)",
-  containerBackgroundColor:"#fafaff", textColor:"#534eb1", userBackgroundColor:"rgb(232, 243, 255)", 
-  agentBubbleBackgroundColor:"#f0efff", bubblePaddingRight:"10px", bubblePaddingLeft:"10px", 
-  bubblePaddingBottom:"7px", bubblePaddingTop:"7px",
-  fontWeight:"525", bubbleBorderRadius:"2rem", fontFamily:"itim"
+  containerStyle: { overflowY:"auto", scrollBackgroundColor:"transparent",
+  borderColor:"transparent",borderRadius:"2rem", height:"550px",
+  boxShadow:"inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)",
+  backgroundColor:"#fafaff"},
+
+  bubbleStyle:{textColor:"#534eb1", userBackgroundColor:"rgb(232, 243, 255)", 
+  agentBackgroundColor:"#f0efff", paddingRight:"10px", paddingLeft:"10px", 
+  paddingBottom:"7px", paddingTop:"7px",
+  fontWeight:"525", borderRadius:"2rem", fontFamily:"itim"},
 }
+
 document.body.style.backgroundColor = "transparent";
 
 /**
@@ -46,13 +49,7 @@ class ChatContainer extends StreamlitComponentBase<State> {
   
 
   public render = (): ReactNode => {
-    const { messages, key, overflowY, scrollBackgroundColor,
-  containerBorderColor,containerBorderRadius, containerHeight,
-  containerBoxShadow,
-  containerBackgroundColor, textColor, userBackgroundColor, 
-  agentBubbleBackgroundColor, bubblePaddingRight, bubblePaddingLeft, 
-  bubblePaddingBottom, bubblePaddingTop,
-  fontWeight, bubbleBorderRadius, fontFamily} = this.props.args;
+    const { messages, key, containerStyle, bubbleStyle} = this.props.args;
 
     const paperStyle={
     '&::-webkit-scrollbar': {
@@ -64,22 +61,22 @@ class ChatContainer extends StreamlitComponentBase<State> {
       webkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)'
     },
     '&::-webkit-scrollbar-thumb': {
-      backgroundColor: scrollBackgroundColor,
+      backgroundColor: ("scrollBackgroundColor" in containerStyle? containerStyle["scrollBackgroundColor"] : "transparent"),
       outline: '1px solid rgba(0,0,0,0.25)',
       borderRadius: 8,
     },
-    borderColor: containerBorderColor,
+    borderColor: ("borderColor" in containerStyle? containerStyle["borderColor"] : "transparent"),
     borderStyle: "solid",
-    overflowY: overflowY,
+    overflowY: ("overflowY" in containerStyle? containerStyle["overflowY"] : "auto"),
     p: 2,
     scrollbarWidth: "thin",
     scrollbarGutter: "stable",
-    height: containerHeight,
-    borderRadius: containerBorderRadius,
+    height:("height" in containerStyle? containerStyle["height"] : "550px"),
+    borderRadius: ("borderRadius" in containerStyle? containerStyle["borderRadius"] : "2rem"),
     marginLeft:"5%",
     marginRight:"5%",
-    boxShadow: containerBoxShadow,
-    backgroundColor: containerBackgroundColor,
+    boxShadow: ("boxShadow" in containerStyle? containerStyle["boxShadow"] : "inset 0px 0 20px 5px rgb(219 219 219 / 11%), 0px 0px 0px 0px rgb(0 0 0 / 8%), 0px 1px 3px 0px rgb(0 0 0 / 0%)"),
+    backgroundColor: ("backgroundColor" in containerStyle? containerStyle["backgroundColor"] : "#fafaff"),
   }
     // Arguments that are passed to the plugin in Python are accessible
     // via `this.props.args`. Here, we access the "name" arg.
@@ -87,10 +84,7 @@ class ChatContainer extends StreamlitComponentBase<State> {
     
     const chatBubbles=[];
     for (let index = 0; index < messages.length; index++) {
-      chatBubbles.push(<MessageBubble data={{role:messages[index]["role"],content:messages[index]["content"]}} key={messages[index]["key"]} textColor={textColor} userBackgroundColor={userBackgroundColor}
-        agentBubbleBackgroundColor={agentBubbleBackgroundColor} bubblePaddingRight={bubblePaddingRight}
-        bubblePaddingLeft={bubblePaddingLeft} bubblePaddingBottom={bubblePaddingBottom} bubblePaddingTop={bubblePaddingTop}
-        fontWeight={fontWeight} bubbleBorderRadius={bubbleBorderRadius} fontFamily={fontFamily}/>);
+      chatBubbles.push(<MessageBubble data={{role:messages[index]["role"],content:messages[index]["content"]}} key={messages[index]["key"]} style={bubbleStyle}/>);
       // console.log(messages.length)
     }
       

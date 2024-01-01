@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="streamlit_custom_chat",
-    version="0.1.0",
+    version="0.1.2",
     author="Farah S",
     author_email="",
     description="Streamlit component for displaying chat messages",

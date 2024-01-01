@@ -8,10 +8,10 @@ import Col from 'react-bootstrap/Col';
 interface BubbleState {
   data: {role:string,content:string},
   key: string,
-  textColor:"#534eb1", userBackgroundColor:"rgb(232, 243, 255)", 
-  agentBubbleBackgroundColor:"#f0efff", bubblePaddingRight:"10px", bubblePaddingLeft:"10px", 
+  style:{textColor:"#534eb1", userBackgroundColor:"rgb(232, 243, 255)", 
+  agentBackgroundColor:"#f0efff", bubblePaddingRight:"10px", bubblePaddingLeft:"10px", 
   bubblePaddingBottom:"7px", bubblePaddingTop:"7px",
-  fontWeight:"525", bubbleBorderRadius:"2rem", fontFamily:"itim"
+  fontWeight:"525", bubbleBorderRadius:"2rem", fontFamily:"itim"}
 }
 
 document.body.style.backgroundColor = "transparent";
@@ -20,21 +20,21 @@ class MessageBubble extends Component<BubbleState>{
   public render = (): ReactNode => {
     // Arguments that are passed to the plugin in Python are accessible
     // via `this.props.args`. Here, we access the "name" arg.
-    const { data, key, textColor, userBackgroundColor, 
-  agentBubbleBackgroundColor, bubblePaddingRight, bubblePaddingLeft, 
-  bubblePaddingBottom, bubblePaddingTop,
-  fontWeight, bubbleBorderRadius, fontFamily } = this.props;
-    
+    const { data, key, style } = this.props;
+    const userColor=("userBackgroundColor" in style? style["userBackgroundColor"] : "rgb(232, 243, 255)")
+    const agentColor=("agentBackgroundColor" in style? style["agentBackgroundColor"] : "#f0efff")
+    const fontWeight=("fontWeight" in style? style["fontWeight"] : "525")
+    const fontFamily=("fontFamily" in style? style["fontFamily"] : "itim")
     const BubbleStyle = {
-      color: textColor,
-      backgroundColor: data.role==="user"?userBackgroundColor:agentBubbleBackgroundColor, // 
-      paddingTop: bubblePaddingTop,
-      paddingRight: bubblePaddingRight,
-      paddingLeft: bubblePaddingLeft,
-      paddingBottom: bubblePaddingBottom,
+      color: ("textColor" in style? style["textColor"] : "#534eb1"),
+      backgroundColor: data.role==="user" ? userColor : agentColor, // 
+      paddingTop: ("bubblePaddingTop" in style? style["bubblePaddingTop"] : "7px"),
+      paddingRight: ("bubblePaddingRight" in style? style["bubblePaddingRight"] : "10px"),
+      paddingLeft: ("bubblePaddingLeft" in style? style["bubblePaddingLeft"] : "10px"),
+      paddingBottom: ("bubblePaddingBottom" in style? style["bubblePaddingBottom"] : "7px"),
       "fontWeight": "100",
       maxWidth:"90%",
-      borderRadius: bubbleBorderRadius
+      borderRadius: ("bubbleBorderRadius" in style? style["bubbleBorderRadius"] : "2rem")
     };
 
     const userContainerStyle = {
