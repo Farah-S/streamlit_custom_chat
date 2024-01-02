@@ -19,7 +19,8 @@ Args:
   
   containerStyle (dict, optional): 
     Allows the customization of the chat container style with CSS. 
-    The values that can be changed and their default values are 
+    The values that can be changed and their default values are
+    
     {
       "overflowY": "auto", 
       "scrollBackgroundColor": "transparent", 
@@ -33,6 +34,7 @@ Args:
   bubbleStyle (dict, optional): 
     Allows the customization of the chat bubble style with CSS. 
     The values that can be changed and their default values are 
+    
     {
       textColor:"#534eb1", 
       userBackgroundColor:"rgb(232, 243, 255)", 
