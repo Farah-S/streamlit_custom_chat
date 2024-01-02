@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: streamlit-custom-chat
-Version: 0.0.56
+Name: streamlit_custom_chat
+Version: 0.1.2
 Summary: Streamlit component for displaying chat messages
 Home-page: 
 Author: Farah S
@@ -19,7 +19,15 @@ Requires-Dist: pytest-rerunfailures==12.0; extra == "devel"
 
 # streamlit_custom_chat
 
-Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role and the array is configured as [{"role":"user", "content":"", "key":""}, {"role":"assistant", "content":"", "key":""}]
+Streamlit custom chat messages and container for the chat messages, takes an array of messages for an llm, where each messages can have user or assitant role. The parameters are as follow:
+
+messages, key, overflowY, scrollBackgroundColor,
+  containerBorderColor,containerBorderRadius, containerHeight,
+  containerBoxShadow,
+  containerBackgroundColor, textColor, userBackgroundColor, 
+  agentBubbleBackgroundColor, bubblePaddingRight, bubblePaddingLeft, 
+  bubblePaddingBottom, bubblePaddingTop,
+  fontWeight, bubbleBorderRadius, fontFamily
 
 ## Installation instructions
 
