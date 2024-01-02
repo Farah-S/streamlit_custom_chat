@@ -45,7 +45,7 @@ else:
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
 def ChatContainer(messages=[], key=None, containerStyle={}, bubbleStyle={}):
-    """_summary_
+    """Customizable Component that displays messages between the user and an agent
 
     Args:
         messages (list, optional): 
@@ -56,7 +56,7 @@ def ChatContainer(messages=[], key=None, containerStyle={}, bubbleStyle={}):
             key uniquely identifies each messages. 
             Defaults to [].
         
-        key (_type_, optional): 
+        key (string, optional): 
             uniquely identifies the container instance. Defaults to None.
         
         containerStyle (dict, optional): 
