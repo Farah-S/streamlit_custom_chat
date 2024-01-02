@@ -79,7 +79,7 @@ class MessageBubble extends Component<BubbleState>{
           <Col xs={1}>
           </Col>
           <Col xs={10} style={BubbleStyle}>
-            <Typography style={{textAlign:"right",whiteSpace:"pre-line",fontFamily: "itim", fontWeight: "525", wordWrap: "break-word",  padding: "5px",}}>
+            <Typography style={{textAlign:"right",whiteSpace:"pre-line",fontFamily: "itim", fontWeight: "500", wordWrap: "break-word",  padding: "5px",}}>
                   {data.content}
             </Typography>
           </Col>
